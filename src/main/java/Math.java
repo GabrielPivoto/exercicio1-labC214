@@ -1,5 +1,11 @@
 public class Math {
 
+    public Primo p;
+
+    public Math(Primo p){
+        this.p = p;
+    }
+
     public static int areaRetangulo(int arg1, int arg2){
         return arg1*arg2;
     }
@@ -16,5 +22,7 @@ public class Math {
             fat *= i;
         return fat;
     }
+
+
 
 }

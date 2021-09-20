@@ -1,7 +1,23 @@
 import org.junit.Assert;
+import org.junit.BeforeClass;
 import org.junit.Test;
+import org.junit.runner.RunWith;
+import org.mockito.Mock;
+import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
+@RunWith(MockitoJUnitRunner.class)
 public class TesteMath {
+
+    @Mock
+    private Primo p;
+
+    private Math m;
+
+    @BeforeClass
+    public void init(){
+        m = new Math(p);
+    }
 
     @Test
     public void testaAreaDoRetangulo(){
@@ -17,5 +33,13 @@ public class TesteMath {
     public void testaFatorial(){
         Assert.assertEquals(720,Math.fatorial(6));
     }
+
+    @Test
+    public void testaPrimo(){
+        Mockito.when(m.p.verificaPrimo(10)).thenReturn("Não é primo");
+        String result = m.p.verificaPrimo(10);
+        Assert.assertEquals(result,m.p.verificaPrimo(10));
+    }
+
 
 }
