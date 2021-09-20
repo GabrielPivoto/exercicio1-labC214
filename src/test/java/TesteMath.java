@@ -1,5 +1,5 @@
 import org.junit.Assert;
-import org.junit.BeforeClass;
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.Mock;
@@ -14,7 +14,7 @@ public class TesteMath {
 
     private Math m;
 
-    @BeforeClass
+    @Before
     public void init(){
         m = new Math(p);
     }
